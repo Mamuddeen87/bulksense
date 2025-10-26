@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BulkSense — Buy Smarter. Together.</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --emerald:#047857;
+      --emerald-dark:#064e3b;
+      --cyan:#06b6d4;
+      --amber:#f59e0b;
+      --cream:#fbfbfa;
+      --slate:#0f172a;
+    }
+
+    html,body { height:100%; }
+    body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--cream); color: #0f172a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+    /* Hero overlay and improved contrast */
+    .hero-bg { background: linear-gradient(180deg, rgba(4,120,87,0.55), rgba(6,78,59,0.35)), url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat; }
+    .hero-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.08); }
+
+    /* Gradients and accents */
+    .btn-gradient { background: linear-gradient(90deg, var(--emerald), var(--cyan)); }
+    .accent-gradient { background: linear-gradient(90deg, rgba(4,120,87,0.15), rgba(6,78,59,0.08)); }
+
+    /* Glass / card style */
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.72));
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+      border: 1px solid rgba(15,23,42,0.04);
+    }
+
+    /* subtle hover float */
+    .float-hover { transition: transform 350ms cubic-bezier(.2,.9,.3,1), box-shadow 350ms; }
+    .float-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 45px rgba(2,6,23,0.12); }
+
+    /* focus outlines for accessibility */
+    .focus-ring:focus { outline: none; box-shadow: 0 0 0 4px rgba(6,182,212,0.12); border-radius: 10px; }
+
+    /* small responsive tweaks */
+    @media (max-width: 768px) {
+      .hero-bg { background-position: center 30%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="fixed w-full z-50 top-4 px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,var(--emerald),var(--cyan));">
+          <span class="text-white font-bold text-lg">B</span>
+        </div>
+        <div>
+          <div class="font-poppins text-base font-semibold" style="font-family:Poppins, Inter">BulkSense</div>
+          <div class="text-xs text-slate-600">Buy Smarter. Together.</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-4 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+        <a href="#how-it-works" class="text-sm font-medium text-slate-700 hover:text-slate-900">How it works</a>
+        <a href="#impact" class="text-sm font-medium text-slate-700 hover:text-slate-900">Impact</a>
+        <a href="#team" class="text-sm font-medium text-slate-700 hover:text-slate-900">Team</a>
+        <button class="ml-2 px-4 py-2 rounded-lg text-sm font-semibold btn-gradient text-white focus-ring">Join</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-bg min-h-[640px] rounded-b-3xl relative mt-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 rounded-b-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-24 relative z-10">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Left: Text -->
+        <div class="text-white">
+          <h1 class="font-poppins text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg" style="font-family:Poppins, Inter">
+            Buy Smarter. <span style="background:linear-gradient(90deg,var(--cyan),var(--amber)); -webkit-background-clip:text; background-clip:text; color:transparent;">Together.</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-slate-100/90 max-w-xl">
+            BulkSense is a modern platform that turns community demand into wholesale power — delivering quality goods at prices your neighbourhood can afford.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#join" class="inline-flex items-center gap-3 px-6 py-3 rounded-lg text-base font-semibold text-white btn-gradient shadow-lg focus-ring">
+              Join a Pool
+            </a>
+            <a href="#start" class="inline-flex items-center gap-3 px-6 py-3 rounded-lg text-base font-semibold border-2 border-white/30 text-white bg-white/6 hover:bg-white/20 focus-ring">
+              Start Saving
+            </a>
+          </div>
+
+          <!-- quick stats -->
+          <div class="mt-8 flex gap-6 items-center">
+            <div class="flex items-center gap-3 bg-white/6 px-4 py-2 rounded-xl">
+              <div class="text-2xl">🏠</div>
+              <div class="text-left">
+                <div class="text-sm font-semibold">₦20,000</div>
+                <div class="text-xs text-slate-100/80">Saved by 20 families</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white/6 px-4 py-2 rounded-xl">
+              <div class="text-2xl">🤝</div>
+              <div class="text-left">
+                <div class="text-sm font-semibold">Community-first</div>
+                <div class="text-xs text-slate-100/80">Transparent & fair</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: hero card -->
+        <div>
+          <div class="glass p-6 md:p-8 rounded-2xl float-hover">
+            <div class="grid grid-cols-2 gap-4 items-center">
+              <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=900&q=80" alt="People packing orders into boxes" class="w-full h-36 object-cover rounded-lg shadow-sm col-span-2" loading="eager" />
+              <div class="col-span-2 mt-2">
+                <h3 class="text-lg font-semibold text-slate-800">Wholesale access, premium UX</h3>
+                <p class="mt-2 text-sm text-slate-600">We consolidate demand, negotiate with suppliers, and handle logistics so your group receives quality goods at wholesale prices.</p>
+              </div>
+
+              <div class="col-span-2 mt-3 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center" style="background:linear-gradient(90deg,var(--cyan),var(--emerald));">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-white"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold">Direct Sourcing</div>
+                  <div class="text-xs text-slate-600">From trusted producers and verified wholesalers.</div>
+                </div>
+                <a href="#about" class="ml-auto text-xs font-semibold text-[var(--emerald)]">Learn more →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <div class="glass p-4 rounded-xl flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1523475496153-3d6cc8a75c30?auto=format&fit=crop&w=400&q=80" alt="stack of sacks and pallets" class="w-14 h-14 object-cover rounded-md" loading="lazy" />
+              <div>
+                <div class="text-sm font-semibold">Bulk Pricing</div>
+                <div class="text-xs text-slate-600">Better unit costs for members.</div>
+              </div>
+            </div>
+
+            <div class="glass p-4 rounded-xl flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80" alt="smiling shopkeeper" class="w-14 h-14 object-cover rounded-md" loading="lazy" />
+              <div>
+                <div class="text-sm font-semibold">Local Empowerment</div>
+                <div class="text-xs text-slate-600">Small shops and households thrive.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- grid -->
+    </div> <!-- container -->
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-6">
+
+    <!-- THE PROBLEM -->
+    <section id="problem" class="mt-16">
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <div class="md:col-span-2">
+          <h2 class="text-3xl font-poppins font-semibold" style="font-family:Poppins, Inter">The Problem We're Solving</h2>
+          <p class="mt-3 text-lg text-slate-600 max-w-2xl">Households and small retailers pay a premium because they buy in small quantities. Fragmented demand reduces bargaining power and pushes quality out of reach. BulkSense changes that.</p>
+
+          <div class="mt-8 grid sm:grid-cols-2 gap-6">
+            <article class="glass p-6 rounded-2xl flex gap-4 float-hover">
+              <div class="text-3xl">💸</div>
+              <div>
+                <h4 class="font-semibold">High Retail Prices</h4>
+                <p class="text-sm text-slate-600 mt-1">Small packages mean higher cost-per-unit — the most vulnerable pay the most.</p>
+              </div>
+            </article>
+
+            <article class="glass p-6 rounded-2xl flex gap-4 float-hover">
+              <div class="text-3xl">🏪</div>
+              <div>
+                <h4 class="font-semibold">Small Shops Can't Compete</h4>
+                <p class="text-sm text-slate-600 mt-1">Without bulk capital, local retailers miss out on supplier discounts.</p>
+              </div>
+            </article>
+
+            <article class="glass p-6 rounded-2xl flex gap-4 float-hover">
+              <div class="text-3xl">⚖️</div>
+              <div>
+                <h4 class="font-semibold">Inequitable Access</h4>
+                <p class="text-sm text-slate-600 mt-1">Those who most need savings are often least able to access them.</p>
+              </div>
+            </article>
+
+            <article class="glass p-6 rounded-2xl flex gap-4 float-hover">
+              <div class="text-3xl">🔗</div>
+              <div>
+                <h4 class="font-semibold">Fragmented Demand</h4>
+                <p class="text-sm text-slate-600 mt-1">Orders are scattered; suppliers don't see predictable volume.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hidden md:block">
+          <div class="rounded-2xl overflow-hidden shadow-lg">
+            <img src="https://images.unsplash.com/photo-1517244683847-3b1b9d32a0e3?auto=format&fit=crop&w=900&q=80" alt="local market and community" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="solution" class="mt-16 py-8">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <img src="https://images.unsplash.com/photo-1592878849127-ea5f9b6a0f39?auto=format&fit=crop&w=1200&q=80" alt="group packing goods" class="rounded-2xl w-full h-72 object-cover shadow-lg" loading="lazy" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-poppins font-semibold">Our Solution: Cooperative Buying</h2>
+          <p class="mt-4 text-lg text-slate-600 max-w-xl">BulkSense matches community demand, negotiates wholesale pricing, and coordinates logistics — bringing quality goods to local groups at a fraction of retail cost.</p>
+
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: linear-gradient(90deg,var(--emerald),var(--cyan)); color:white">✓</div>
+              <div>
+                <div class="font-semibold">Transparent Pricing</div>
+                <div class="text-sm text-slate-600">Clear breakdowns so members see the savings.</div>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: linear-gradient(90deg,var(--cyan),var(--amber)); color:white">✓</div>
+              <div>
+                <div class="font-semibold">Direct Sourcing</div>
+                <div class="text-sm text-slate-600">Verified suppliers and fair terms.</div>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: linear-gradient(90deg,var(--emerald),var(--amber)); color:white">✓</div>
+              <div>
+                <div class="font-semibold">Fair Distribution</div>
+                <div class="text-sm text-slate-600">Efficient pick-up or local delivery options.</div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-6">
+            <a href="#start" class="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-600 text-white font-semibold shadow-lg focus-ring">Get started — it's simple</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="mt-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl font-poppins font-semibold">How It Works</h2>
+        <p class="mt-3 text-slate-600">Three simple steps to unlock community wholesale savings.</p>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="glass p-6 rounded-2xl text-center float-hover">
+          <div class="text-3xl font-poppins font-semibold" style="font-family:Poppins">1</div>
+          <h4 class="mt-4 font-semibold">Join or Create a Pool</h4>
+          <p class="text-sm text-slate-600 mt-2">Bring together neighbours, students, or shopkeepers by category or location.</p>
+        </div>
+
+        <div class="glass p-6 rounded-2xl text-center float-hover">
+          <div class="text-3xl font-poppins font-semibold">2</div>
+          <h4 class="mt-4 font-semibold">We Aggregate Orders</h4>
+          <p class="text-sm text-slate-600 mt-2">We bundle demand, place bulk orders, and secure discounts.</p>
+        </div>
+
+        <div class="glass p-6 rounded-2xl text-center float-hover">
+          <div class="text-3xl font-poppins font-semibold">3</div>
+          <h4 class="mt-4 font-semibold">Fair Distribution</h4>
+          <p class="text-sm text-slate-600 mt-2">Collect at community hubs or get local delivery — transparently split and distributed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact" class="mt-16 py-12 bg-gradient-to-b from-white to-slate-50 rounded-2xl">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-poppins font-semibold text-center">Real-Life Impact</h2>
+        <p class="mt-2 text-center text-slate-600">Saving together produces measurable results.</p>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="glass p-6 rounded-2xl text-center float-hover">
+            <div class="text-4xl">🏠</div>
+            <div class="mt-3 text-2xl font-bold">₦20,000</div>
+            <div class="text-sm text-slate-600 mt-1">Saved by 20 families after a rice pooling.</div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl text-center float-hover">
+            <div class="text-4xl">🎓</div>
+            <div class="mt-3 text-2xl font-bold">30%</div>
+            <div class="text-sm text-slate-600 mt-1">Average reduction in student food costs.</div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl text-center float-hover">
+            <div class="text-4xl">🏪</div>
+            <div class="mt-3 text-2xl font-bold">Competitive</div>
+            <div class="text-sm text-slate-600 mt-1">Small shops access wholesale pricing to stay competitive.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section id="about" class="mt-16 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl font-poppins font-semibold">Why It Matters</h2>
+        <p class="mt-4 text-slate-600 max-w-xl">We blend modern logistics and product rigor with community-driven values: transparency, fairness, and dignity. That combination scales both impact and margin.</p>
+
+        <ul class="mt-6 space-y-4">
+          <li class="flex gap-3 items-start">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:linear-gradient(90deg,var(--emerald),var(--cyan)); color:white">🤝</div>
+            <div>
+              <div class="font-semibold">Halal & Ethical</div>
+              <div class="text-sm text-slate-600">Takaful-inspired cooperation and fair trade.</div>
+            </div>
+          </li>
+
+          <li class="flex gap-3 items-start">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:linear-gradient(90deg,var(--amber),var(--cyan)); color:white">🔍</div>
+            <div>
+              <div class="font-semibold">Full Transparency</div>
+              <div class="text-sm text-slate-600">Open pricing and clear distribution records.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="handshake and community" class="rounded-2xl w-full h-72 object-cover shadow-lg" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="mt-16 text-center">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-poppins font-semibold">Our Team</h2>
+        <p class="mt-3 text-slate-600 max-w-2xl mx-auto">Small, focused, and experienced in logistics, product, and community partnerships.</p>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <!-- Member 1 -->
+          <div class="glass p-6 rounded-2xl">
+            <!-- Replace these Unsplash URLs with your real headshots -->
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Team member photo placeholder 1" class="w-36 h-36 object-cover rounded-full mx-auto shadow-md" loading="lazy" />
+            <h4 class="mt-4 text-xl font-semibold">Name Placeholder</h4>
+            <div class="text-sm text-slate-600 mt-1 font-medium">Co-founder & CEO</div>
+            <p class="mt-3 text-sm text-slate-600">Community builder with logistics and product experience. Replace with real bio.</p>
+            <div class="mt-4 flex justify-center gap-4">
+              <a href="#" class="text-slate-500 text-sm">LinkedIn</a>
+              <a href="#" class="text-slate-500 text-sm">Email</a>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="glass p-6 rounded-2xl">
+            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=800&q=80" alt="Team member photo placeholder 2" class="w-36 h-36 object-cover rounded-full mx-auto shadow-md" loading="lazy" />
+            <h4 class="mt-4 text-xl font-semibold">Name Placeholder</h4>
+            <div class="text-sm text-slate-600 mt-1 font-medium">Head of Operations</div>
+            <p class="mt-3 text-sm text-slate-600">Supply chain & operations lead. Replace with real bio.</p>
+            <div class="mt-4 flex justify-center gap-4">
+              <a href="#" class="text-slate-500 text-sm">LinkedIn</a>
+              <a href="#" class="text-slate-500 text-sm">Email</a>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="glass p-6 rounded-2xl">
+            <img src="https://images.unsplash.com/photo-1545996124-1b5b5f7e2f2b?auto=format&fit=crop&w=800&q=80" alt="Team member photo placeholder 3" class="w-36 h-36 object-cover rounded-full mx-auto shadow-md" loading="lazy" />
+            <h4 class="mt-4 text-xl font-semibold">Name Placeholder</h4>
+            <div class="text-sm text-slate-600 mt-1 font-medium">Head of Partnerships</div>
+            <p class="mt-3 text-sm text-slate-600">Supplier & community partnerships lead. Replace with real bio.</p>
+            <div class="mt-4 flex justify-center gap-4">
+              <a href="#" class="text-slate-500 text-sm">LinkedIn</a>
+              <a href="#" class="text-slate-500 text-sm">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="start" class="mt-16 py-12 rounded-2xl bg-gradient-to-r from-cyan-50 to-emerald-50">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-poppins font-semibold">Ready to Start Saving?</h2>
+        <p class="mt-3 text-slate-600">Join families, students, and shopkeepers buying smarter together.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#join" class="inline-flex items-center gap-3 px-6 py-3 rounded-lg text-base font-semibold text-white btn-gradient shadow-lg focus-ring">Join the Movement</a>
+          <a href="#contact" class="inline-flex items-center gap-3 px-6 py-3 rounded-lg border-2 border-emerald-600 text-emerald-600 font-semibold">Start a Pool</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-slate-900 text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,var(--emerald),var(--cyan));">
+            <span class="text-white font-extrabold">B</span>
+          </div>
+          <div>
+            <div class="font-semibold">BulkSense</div>
+            <div class="text-xs text-slate-300">Buy Smarter. Together.</div>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-slate-300 max-w-sm">Empowering communities through cooperative purchasing and fair trade practices.</p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Quick links</h4>
+        <ul class="mt-3 text-sm text-slate-300 space-y-2">
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="mt-3 text-sm text-slate-300">📧 hello@bulksense.com</p>
+        <p class="text-sm text-slate-300">📱 +234 800 BULK SENSE</p>
+        <div class="mt-4 flex gap-3">
+          <a class="text-slate-300">📘</a>
+          <a class="text-slate-300">🐦</a>
+          <a class="text-slate-300">📷</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 mt-8 text-center text-slate-400 text-sm">
+      © <span id="yr"></span> BulkSense. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // populate year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // small accessibility focus: keyboard-visible focus rings for interactive elements
+    (function(){
+      document.querySelectorAll('a, button').forEach(el=>{
+        el.addEventListener('focus', ()=> el.classList.add('focus-ring'));
+        el.addEventListener('blur', ()=> el.classList.remove('focus-ring'));
+      });
+    })();
+  </script>
+</body>
+</html>
