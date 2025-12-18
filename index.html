@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     body {
@@ -25,28 +26,65 @@
     .glass {
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255,255,255,0.12);
     }
   </style>
 </head>
+
 <body class="overflow-x-hidden">
 
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-black/30 backdrop-blur-xl transition-all">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <img src="https://i.ibb.co/H5hKCc1/Gemini-Generated-Image-wg98ewg98ewg98ew.png"
+           class="w-10 h-10 rounded-full border border-white/20" />
+      <span class="font-extrabold text-lg brand-font">BulkSense</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+      <a href="#how-it-works" class="hover:text-[#C8A845]">How It Works</a>
+      <a href="#founder" class="hover:text-[#C8A845]">Founder</a>
+      <a href="#contact" class="hover:text-[#C8A845]">Contact</a>
+      <a href="https://forms.gle/6VkkMAAQ2Uwhj3CZA"
+         class="px-5 py-2 rounded-xl text-white font-bold"
+         style="background:#356D39">
+        Join Group
+      </a>
+    </div>
+
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-6">
+    <div class="glass rounded-2xl p-6 space-y-4 text-sm font-semibold">
+      <a href="#how-it-works" class="block">How It Works</a>
+      <a href="#founder" class="block">Founder</a>
+      <a href="#contact" class="block">Contact</a>
+      <a href="https://forms.gle/6VkkMAAQ2Uwhj3CZA"
+         class="block text-center px-5 py-3 rounded-xl text-white font-bold"
+         style="background:#356D39">
+        Join a Buying Group
+      </a>
+    </div>
+  </div>
+</header>
+
 <!-- HERO -->
-<section class="relative px-6 pt-28 pb-36">
+<section class="px-6 pt-36 pb-24">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-
-    <!-- Text -->
     <div>
-      <img src="https://i.ibb.co/H5hKCc1/Gemini-Generated-Image-wg98ewg98ewg98ew.png" class="w-15 h-15 mb-10 rounded-full border border-white/20 shadow-2xl" />
-
-      <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold glass text-[#C8A845] mb-6">
+      <span class="inline-flex px-4 py-2 rounded-full text-sm font-semibold glass text-[#C8A845] mb-6">
         🇳🇬 Launching in Nigeria
       </span>
 
-      <h1 class="text-5xl md:text-6xl xl:text-7xl font-extrabold leading-tight brand-font mb-6">
-        Buy Smarter.<br />
-        <span class="text-[#C8A845]">Together.</span>
+      <h1 class="text-4xl md:text-6xl xl:text-7xl font-extrabold brand-font mb-6">
+        Buy Smarter.<br><span class="text-[#C8A845]">Together.</span>
       </h1>
 
       <p class="text-lg text-slate-300 max-w-xl mb-10">
@@ -54,23 +92,20 @@
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button class="px-9 py-4 rounded-xl text-lg font-bold text-white shadow-2xl transition hover:scale-105"
-          style="background:#356D39" href="https://forms.gle/6VkkMAAQ2Uwhj3CZA">
+        <a href="https://forms.gle/6VkkMAAQ2Uwhj3CZA"
+           class="px-8 py-4 rounded-xl text-lg font-bold text-white"
+           style="background:#356D39">
           Join a Buying Group
-        </button>
-        <button class="px-9 py-4 rounded-xl text-lg font-semibold border border-[#C8A845] text-[#C8A845] hover:bg-[#C8A845]/10" href="https://forms.gle/6VkkMAAQ2Uwhj3CZA">
+        </a>
+        <a href="#how-it-works"
+           class="px-8 py-4 rounded-xl text-lg font-semibold border border-[#C8A845] text-[#C8A845]">
           How It Works
-        </button>
+        </a>
       </div>
     </div>
 
-    <!-- Visual -->
-    <div class="relative">
-      <div class="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-[#356D39]/40 to-[#C8A845]/30 blur-2xl"></div>
-      <img src="https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=1200&fit=crop"
-           class="relative rounded-3xl shadow-2xl border border-white/10" />
-    </div>
-
+    <img src="https://i.ibb.co/27s3SjkL/1-17.png"
+         class="rounded-3xl shadow-2xl border border-white/10 w-full"/>
   </div>
 </section>
 
@@ -113,97 +148,191 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="px-6 py-28 bg-gradient-to-b from-black/40 to-black/70">
+<section id="how-it-works" class="px-6 py-24 bg-black/60">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-4xl font-bold text-center brand-font mb-20">How BulkSense Works</h2>
-
-    <div class="space-y-14">
-      <div class="flex items-center gap-8">
-        <span class="text-5xl font-black text-[#C8A845]">01</span>
-        <p class="text-xl">Join or create a trusted buying group</p>
-      </div>
-      <div class="flex items-center gap-8">
-        <span class="text-5xl font-black text-[#C8A845]">02</span>
-        <p class="text-xl">Pool orders to reach wholesale volumes</p>
-      </div>
-      <div class="flex items-center gap-8">
-        <span class="text-5xl font-black text-[#C8A845]">03</span>
-        <p class="text-xl">We source directly from verified suppliers</p>
-      </div>
-      <div class="flex items-center gap-8">
-        <span class="text-5xl font-black text-[#C8A845]">04</span>
-        <p class="text-xl">Transparent pricing & coordinated delivery</p>
-      </div>
-    </div>
-
-    <div class="mt-20 text-center">
-      <div class="inline-block glass px-14 py-10 rounded-3xl">
-        <div class="text-6xl font-black text-[#356D39] mb-2">15–25%</div>
-        <div class="text-lg font-semibold">Average Savings</div>
-      </div>
+    <h2 class="text-4xl font-bold text-center brand-font mb-16">How BulkSense Works</h2>
+    <div class="space-y-8">
+      <p><strong class="text-[#C8A845]">01</strong> Join or create a buying group</p>
+      <p><strong class="text-[#C8A845]">02</strong> Pool orders to reach wholesale volume</p>
+      <p><strong class="text-[#C8A845]">03</strong> We source from verified suppliers</p>
+      <p><strong class="text-[#C8A845]">04</strong> Transparent pricing & delivery</p>
     </div>
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="px-6 py-28">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl md:text-5xl font-extrabold brand-font mb-6">The Founder</h2>
-    <p class="text-lg text-slate-300 mb-16">Built by a product-minded operator obsessed with efficiency, trust, and systems.</p>
 
-    <div class="max-w-3xl mx-auto">
-      <div class="glass rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-10">
-        <!-- Founder Image -->
-        <div class="relative">
-          <div class="absolute -inset-2 rounded-full bg-gradient-to-tr from-[#356D39]/50 to-[#C8A845]/40 blur-xl"></div>
-          <img src="https://i.ibb.co/m5cYkv1P/ana.jpg" alt="Bello Garba (Mamuddeen)" class="relative w-48 h-48 object-cover rounded-full border border-white/20 shadow-2xl" />
-        </div>
+<!-- SOLUTIONS -->
+<section id="solutions" class="px-6 py-28">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold brand-font mb-10">How BulkSense Solves It</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <!-- Founder Bio -->
-        <div class="text-center md:text-left">
-          <h3 class="text-2xl font-bold mb-1">Bello Garba</h3>
-          <p class="text-[#C8A845] font-semibold mb-4">Founder · Mamuddeen</p>
-
-          <p class="text-slate-300 leading-relaxed mb-6">
-            Bello Garba, popularly known as <strong>Mamuddeen</strong>, is a systems-focused builder with a background in <strong>Virtual Assistance</strong> and <strong>Data Analytics</strong>. He combines operational execution with analytical thinking to design scalable, trust-driven platforms for everyday problems.
-          </p>
-
-          <div class="flex flex-wrap justify-center md:justify-start gap-3">
-            <span class="px-4 py-2 rounded-full text-sm glass">Virtual Assistant</span>
-            <span class="px-4 py-2 rounded-full text-sm glass">Data Analyst</span>
-            <span class="px-4 py-2 rounded-full text-sm glass">Product & Operations</span>
-          </div>
-        </div>
+      <div class="glass p-6 rounded-2xl shadow-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#C8A845]">Coordinated Buying Power</h3>
+        <p class="text-slate-300 text-sm">
+          Pool demand with others to reach wholesale volume thresholds — no huge capital needed per member.
+        </p>
       </div>
+
+      <div class="glass p-6 rounded-2xl shadow-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#C8A845]">Direct Supplier Access</h3>
+        <p class="text-slate-300 text-sm">
+          Source goods straight from verified suppliers, eliminating costly middlemen and markups.
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl shadow-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#C8A845]">Clear Pricing & Savings</h3>
+        <p class="text-slate-300 text-sm">
+          Transparent pricing breakdowns with estimated savings so every member sees exactly what they pay for.
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl shadow-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#C8A845]">Logistics Coordination</h3>
+        <p class="text-slate-300 text-sm">
+          Coordinated delivery and local distribution support reduce wait times and complexity.
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl shadow-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#C8A845]">Community Trust Network</h3>
+        <p class="text-slate-300 text-sm">
+          Build reputation and trust within your buying group — with ratings, referrals, and history of savings.
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl shadow-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#C8A845]">Shared Delivery Options</h3>
+        <p class="text-slate-300 text-sm">
+          Members can choose pickup or coordinated delivery bundles for convenience and efficiency.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="px-6 py-32 text-center">
-  <h2 class="text-5xl font-extrabold brand-font mb-8">Start Saving Together</h2>
-  <p class="text-xl text-slate-300 mb-12">Bulk buying, redesigned for modern communities.</p>
-
-  <div class="flex justify-center gap-6 flex-wrap">
-    <button class="px-12 py-5 rounded-2xl text-xl font-bold text-white shadow-2xl hover:scale-105 transition"
-      style="background:#356D39" href="https://forms.gle/6VkkMAAQ2Uwhj3CZA">
-      Join a Buying Group
-    </button>
-    <button class="px-12 py-5 rounded-2xl text-xl font-bold border border-[#C8A845] text-[#C8A845] hover:bg-[#C8A845]/10" href="https://forms.gle/6VkkMAAQ2Uwhj3CZA">
-      Join the Waitlist
-    </button>
+<!-- FOUNDER -->
+<section id="founder" class="px-6 py-28 text-center">
+  <h2 class="text-4xl font-extrabold brand-font mb-6">The Founder</h2>
+  <div class="glass max-w-3xl mx-auto p-10 rounded-3xl">
+    <img src="https://i.ibb.co/m5cYkv1P/ana.jpg"
+         class="w-40 h-40 mx-auto rounded-full border border-white/20 mb-6"/>
+    <h3 class="text-2xl font-bold">Mamuddeen</h3>
+    <p class="text-[#C8A845] font-semibold mb-4">(Bello Garba) · Founder/CEO</p>
+    <p class="text-slate-300">
+      Systems-focused builder with background in Virtual Assistance and Data Analytics,
+      building trust-driven platforms for everyday problems.
+    </p>
   </div>
 </section>
+
+<!-- CONTACT --> 
+<section id="contact" class="px-6 py-28">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-extrabold brand-font text-center mb-6">
+      Contact Us
+    </h2>
+
+    <div class="glass rounded-3xl p-10 space-y-6 text-lg">
+
+      <!-- Location -->
+      <div class="flex items-start gap-4">
+        <i class="fas fa-map-marker-alt text-[#C8A845] text-2xl mt-1"></i>
+        <p>
+          Sani Abacha Street, Azare,<br>
+          Bauchi State, Nigeria
+        </p>
+      </div>
+
+      <!-- Phone -->
+      <div class="flex items-center gap-4">
+        <i class="fas fa-phone-alt text-[#C8A845] text-xl"></i>
+        <p>
+          <a href="tel:+2348034361458" class="hover:underline">
+            08034361458
+          </a>
+        </p>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="flex items-center gap-4">
+        <i class="fab fa-whatsapp text-[#25D366] text-2xl"></i>
+        <p>
+          <a href="https://wa.me/2348034361458" target="_blank" class="hover:underline">
+            08034361458
+          </a>
+        </p>
+      </div>
+
+      <!-- Email -->
+      <div class="flex items-center gap-4">
+        <i class="fas fa-envelope text-[#C8A845] text-xl"></i>
+        <p>
+          <a href="mailto:bellog.ug@atbu.edu.ng" class="hover:underline">
+            bellog.ug@atbu.edu.ng
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer class="px-6 py-16 border-t border-white/10 text-center text-sm text-slate-400">
-  <img src="https://i.ibb.co/H5hKCc1/Gemini-Generated-Image-wg98ewg98ewg98ew.png" class="w-20 h-20 mx-auto mb-4 rounded-full border border-white/20 shadow-xl" />
   <p>© BulkSense · Buy Smarter. Together.</p>
-  <p href="wa.me/2348034361458"><emp>WhatApp: </emp>08034361458</p>
 </footer>
+
+<!-- WHATSAPP FLOAT -->
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/2348034361458"
+   target="_blank"
+   aria-label="Chat on WhatsApp"
+   class="fixed bottom-20 right-5 z-50 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-105 transition"
+   style="background:#25D366">
+  
+  <!-- WhatsApp SVG Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 32 32"
+       fill="white"
+       class="w-7 h-7">
+    <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.3 31.5l7.8-2.1c2.3 1.2 5 1.8 7.9 1.8 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.1c-2.4 0-4.8-.6-6.9-1.8l-.5-.3-4.6 1.2 1.2-4.5-.3-.5C3.5 20.6 2.9 18.3 2.9 16 2.9 8.8 8.8 2.9 16 2.9S29.1 8.8 29.1 16 23.2 28.6 16 28.6zm7.6-9.2c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-1 .2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-1-.2-1.4-.2h-1.1c-.3 0-.6.1-.8.4-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.4.7.3 1.2.5 1.6.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.3.3-.6.3-1.2.2-1.3-.1-.1-.4-.2-.8-.4z"/>
+  </svg>
+</a>
+
+<!-- MOBILE STICKY CTA -->
+<div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-black/80 border-t border-white/10">
+  <div class="px-4 py-3 flex justify-between items-center">
+    <span class="text-sm">Save <span class="text-[#C8A845]">15–25%</span></span>
+    <a href="https://forms.gle/6VkkMAAQ2Uwhj3CZA"
+       class="px-4 py-2 rounded-xl text-white font-bold"
+       style="background:#356D39">
+      Join
+    </a>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const navbar = document.getElementById('navbar');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('bg-black/70','shadow-xl','border-b','border-white/10');
+    } else {
+      navbar.classList.remove('bg-black/70','shadow-xl','border-b','border-white/10');
+    }
+  });
+</script>
 
 </body>
 </html>
-
-
-
